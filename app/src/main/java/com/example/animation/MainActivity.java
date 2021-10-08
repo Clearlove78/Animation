@@ -22,6 +22,8 @@ public class MainActivity extends Activity {
     private AdaptiveIconDrawable animDance;
     float nextX = 0;
     float nextY = 0;
+    float n = 0;
+    float m = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +38,24 @@ public class MainActivity extends Activity {
             {
                 if(msg.what == 0x123)
                 {
-                    if(nextX > 500)
-                    {
-                        curX = nextX = 0;
+                    if(n < 1500 || m < -1) {
+                        if (nextX > 500) {
+                            curX = nextX = 0;
+                        } else {
+                            nextX += 10;
+                        }
+                        nextY = curY + (float) (Math.random() * 10 - 1);
+                        n = curY;
                     }
-                    else
-                    {
-                        nextX += 10;
-                    }
-                    nextY = curY + (float)(Math.random() * 10 - 1);
-                    if(nextY > 1500){
-                        nextY = 0;
+                    if(n > 1500){
+                        if(nextX < 0)
+                        {
+                            curX = nextX = 500;
+                        }else {
+                            nextX -= 10;
+                        }
+                        nextY = curY - (float)(Math.random() * 10 - 1);
+                        m = curY;
                     }
                     TranslateAnimation anim = new TranslateAnimation(curX,nextX,curY,nextY);
                     curX = nextX;
