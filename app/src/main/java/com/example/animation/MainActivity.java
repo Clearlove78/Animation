@@ -29,24 +29,28 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //get 6 image
         final ImageView imageView = (ImageView)findViewById(R.id.laoyangfly);
         final Handler handler = new Handler()
         {
-
+            //get curX and curY and change location to make it down if image is out of screen, move it up
             @Override
             public void handleMessage(Message msg)
             {
                 if(msg.what == 0x123)
                 {
                     if(n < 1500 || m < -1) {
+                        //move back if x > 500
                         if (nextX > 500) {
                             curX = nextX = 0;
                         } else {
                             nextX += 10;
                         }
+                        //move image down
                         nextY = curY + (float) (Math.random() * 10 - 1);
                         n = curY;
                     }
+                    //if n > 1500, move image up
                     if(n > 1500){
                         if(nextX < 0)
                         {
@@ -57,6 +61,7 @@ public class MainActivity extends Activity {
                         nextY = curY - (float)(Math.random() * 10 - 1);
                         m = curY;
                     }
+                    //use animation to move image
                     TranslateAnimation anim = new TranslateAnimation(curX,nextX,curY,nextY);
                     curX = nextX;
                     curY = nextY;
@@ -65,7 +70,7 @@ public class MainActivity extends Activity {
                 }
             }
         };
-
+        //Animation
         final AnimationDrawable butterfly = (AnimationDrawable) imageView.getBackground();
         imageView.setOnClickListener(new OnClickListener() {
             @Override
