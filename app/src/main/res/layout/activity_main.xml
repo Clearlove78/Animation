@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:apk = "http://schemas.android.com/apk/res/android"
-    apk:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res-auto"
+    xmlns:apk="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     apk:layout_width="fill_parent"
-    apk:layout_height="fill_parent">
+    apk:layout_height="fill_parent"
+    apk:background="#4BCC51"
+    tools:ignore="NamespaceTypo">
 
     <ImageView
         apk:id="@+id/laoyangfly"
         apk:layout_width="wrap_content"
         apk:layout_height="wrap_content"
-        apk:background="@drawable/laoyangfly">
-    </ImageView>
+        apk:background="@drawable/laoyangfly"></ImageView>
 </LinearLayout>
