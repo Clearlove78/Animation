@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Timer;
 import java.util.TimerTask;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -13,10 +14,12 @@ import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-public class MainActivity extends Activity {
-
+public class MainActivity extends Activity{
+    private Button start_btn,exit_btn;
     float curX = 0;
     float curY = 0;
     private AdaptiveIconDrawable animDance;
@@ -29,6 +32,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        start_btn= (Button) findViewById(R.id.start_btn);
+        exit_btn= (Button) findViewById(R.id.exit_btn);
         //get 6 image
         final ImageView imageView = (ImageView)findViewById(R.id.laoyangfly);
         final Handler handler = new Handler()
@@ -70,6 +75,13 @@ public class MainActivity extends Activity {
                 }
             }
         };
+        start_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,Main2Activity.class) ;
+                startActivity(intent);
+            }
+        });
         //Animation
         final AnimationDrawable butterfly = (AnimationDrawable) imageView.getBackground();
         imageView.setOnClickListener(new OnClickListener() {
