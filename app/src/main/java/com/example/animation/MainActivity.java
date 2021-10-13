@@ -34,7 +34,6 @@ public class MainActivity extends Activity{
         setContentView(R.layout.activity_main);
         start_btn= (Button) findViewById(R.id.start_btn);
         exit_btn= (Button) findViewById(R.id.exit_btn);
-        //get 6 image
         final ImageView imageView = (ImageView)findViewById(R.id.laoyangfly);
         final Handler handler = new Handler()
         {
