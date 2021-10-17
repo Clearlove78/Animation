@@ -33,7 +33,6 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         start_btn= (Button) findViewById(R.id.start_btn);
-        exit_btn= (Button) findViewById(R.id.exit_btn);
         final ImageView imageView = (ImageView)findViewById(R.id.laoyangfly);
         //set image slipping
         final Handler handler = new Handler()

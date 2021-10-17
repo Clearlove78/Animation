@@ -18,17 +18,11 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/exit_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="690dp"
-        android:text="Exit" />
 
     <Button
         android:id="@+id/start_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="670dp"
         android:text="Start game" />
 </RelativeLayout>
