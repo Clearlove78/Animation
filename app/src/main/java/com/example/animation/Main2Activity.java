@@ -22,13 +22,16 @@ public class Main2Activity extends Activity {
         tv_time = (TextView) findViewById(R.id.tv_time);
 
         gameview = (GameView) findViewById(R.id.gameview);
-        gameview.setTimeEnabled(true);
+        gameview = (GameView) findViewById(R.id.gameview);
 
+        //time view
+        gameview.setTimeEnabled(true);
+        //Puzzle game success
         gameview.setOnGamemListener(new GameView.GamePintuListener() {
             @Override
             public void nextLevel(final int nextLevel) {
 
-                new AlertDialog.Builder(Main2Activity.this).setTitle("Done").setMessage("Congratulation").setPositiveButton("Next level", new DialogInterface.OnClickListener() {
+                new AlertDialog.Builder(Main2Activity.this).setTitle("Puzzle Clear").setMessage("Congratulation").setPositiveButton("Next level", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         gameview.nextLevel();
@@ -39,12 +42,13 @@ public class Main2Activity extends Activity {
 
             @Override
             public void timechanged(int time) {
-                tv_time.setText("Remain time：" + time);
+                //set Time
+                tv_time.setText("Time：" + time);
             }
-
+            //game over and restart
             @Override
             public void gameOver() {
-                new AlertDialog.Builder(Main2Activity.this).setTitle("game over").setMessage("Sorry").setPositiveButton("Restart", new DialogInterface.OnClickListener() {
+                new AlertDialog.Builder(Main2Activity.this).setTitle("Game over").setMessage("Try again").setPositiveButton("restart", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         gameview.restartGame();

@@ -25,7 +25,7 @@
 
     <com.example.animation.GameView
         android:id="@+id/gameview"
-        android:layout_width="397dp"
+        android:layout_width="410dp"
         android:layout_height="598dp">
 
     </com.example.animation.GameView>

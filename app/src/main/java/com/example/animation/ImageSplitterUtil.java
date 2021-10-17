@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//split image and sort it
 public class ImageSplitterUtil {
     public static List<ImagePiece> splitImage(Bitmap bitmap, int piece) {
 

@@ -35,6 +35,7 @@ public class MainActivity extends Activity{
         start_btn= (Button) findViewById(R.id.start_btn);
         exit_btn= (Button) findViewById(R.id.exit_btn);
         final ImageView imageView = (ImageView)findViewById(R.id.laoyangfly);
+        //set image slipping
         final Handler handler = new Handler()
         {
             //get curX and curY and change location to make it down if image is out of screen, move it up
@@ -74,6 +75,7 @@ public class MainActivity extends Activity{
                 }
             }
         };
+        //click image to start slip
         start_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
